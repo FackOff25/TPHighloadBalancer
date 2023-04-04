@@ -129,3 +129,4 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
+ALLOWED_HOSTS = ['*']
