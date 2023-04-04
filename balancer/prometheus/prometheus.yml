@@ -6,4 +6,6 @@ scrape_configs:
   - job_name: monitoring
     static_configs:
       - targets:
-        - localhost:8080
+        - 89.208.84.208:80
+        - 185.130.112.13:80
+        - 87.239.108.31:80
