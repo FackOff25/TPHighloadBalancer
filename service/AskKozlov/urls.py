@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from AskKozlovApp import views
+from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls, name="admin"),
@@ -28,5 +29,6 @@ urlpatterns = [
     path('', views.logout, name="log out"),
     path('settings/', views.settings, name="settings"),
     path('ask/', views.ask, name="newquestion"),
-    path('question/<int:qid>/', views.question, name="question")
+    path('question/<int:qid>/', views.question, name="question"),
+    path('', include("django_prometheus.urls")),
 ]

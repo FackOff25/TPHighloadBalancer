@@ -1,6 +1,7 @@
 version: "3.7"
 
 services:
+
   nginx:
     container_name: nginx
     image: nginx
@@ -8,3 +9,13 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
       - "80:80"
+  
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+    network_mode: "host"
+
+  grafana:
+    image: grafana/grafana
+    network_mode: "host"
